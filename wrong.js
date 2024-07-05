@@ -32,7 +32,6 @@ image.src = "assets/frozen-cheesecake-slice.jpg";
 
 // The background color of the ingredients list container is wrong. Fix it.
 const ingredientsContainer = document.querySelector(".ingredients-container");
-console.log(ingredientsContainer);
 ingredientsContainer.style.backgroundColor = "#f9f9f9";
 
 // The ingredients are divided in to two parts, one for the bottom and one for the paste.

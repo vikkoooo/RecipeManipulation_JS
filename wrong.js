@@ -31,18 +31,33 @@ const image = document.querySelector(".image-container img");
 image.src = "assets/frozen-cheesecake-slice.jpg";
 
 // The background color of the ingredients list container is wrong. Fix it.
-const ingredients = document.querySelector(".ingredients-container");
-console.log(ingredients);
-ingredients.style.backgroundColor = "#f9f9f9";
+const ingredientsContainer = document.querySelector(".ingredients-container");
+console.log(ingredientsContainer);
+ingredientsContainer.style.backgroundColor = "#f9f9f9";
 
 // The ingredients are divided in to two parts, one for the bottom and one for the paste.
 // In the list of the ingredients to the bottom, there is a text instead of two list items.
 // Remove the text and add those two list items.
+const ingredientBottom = document.querySelector(".ingredients-list-bottom");
+ingredientBottom.innerHTML = ""; // clear
 
+// Can also be solved by a loop of many elements to be manipulated
+const firstItem = document.createElement("li"); // create li element
+ingredientBottom.appendChild(firstItem); // add after the last element (position 1 in this case since its empty)
+firstItem.innerText = "15st digistivetex"; // set text
 
-
+const secondItem = document.createElement("li"); // create li element
+ingredientBottom.appendChild(secondItem); // add after last item (will be last in the list)
+secondItem.innerText = "Lite smör"; // set text
 
 // The third ingredient in the list of ingredients to the paste is wrong. Change that specific ingredient to the correct one.
+const ingredientsList = document.querySelector(".ingredients-list-paste");
+ingredientsList.children[2].innerText = "3tsk vaniljsocker";
+
 // There is also a missing ingredient in the list of ingredients to the paste. Look and see what it is and add that one the the end of the list.
+const missingIngredient = document.createElement("li");
+missingIngredient.innerText = "400g naturell philadelphiaost";
+ingredientsList.appendChild(missingIngredient);
+
 // The text "Instructions" to the left, beneath the image, has some shadow styling applied to it. Remove that styling.
 // Two list elements of the list of instructions are incorrect. Find them and change them to the correct ones.

@@ -1,22 +1,22 @@
 // What is the name of the recipe?
 const recipeName = document.querySelector("#recipe-name");
-const recipeNameInnerText = recipeName.innerText;
-console.log(recipeNameInnerText); // Answer: Frozen Cheescake
+export const recipeNameInnerText = recipeName.innerText; // Answer: Frozen Cheescake
+console.log(recipeNameInnerText);
 
 // What HTML tag is used to display the Recipe name?
-const recipeNameTagName = recipeName.tagName;
-console.log(recipeNameTagName); // Answer: H1
+export const recipeNameTagName = recipeName.tagName; // Answer: H1
+console.log(recipeNameTagName);
 
 // What is the font size of the paragraph tag with the class "description".
 const description = document.querySelector("p.description");
-const descriptionFontSize = window.getComputedStyle(description).fontSize;
-console.log(descriptionFontSize); // Answer: 16 px
+export const descriptionFontSize = window.getComputedStyle(description).fontSize; // Answer: 16 px
+console.log(descriptionFontSize);
 description.style.fontSize = "1rem"; // to set 
 console.log(description.style.fontSize); // to log after manually set
 
 // What is the value of the alt atrribute on the image?
 const image = document.querySelector(".image-container img");
-const imageAlt = image.getAttribute("alt"); // Answer: Slice of Frozen Cheescake
+export const imageAlt = image.getAttribute("alt"); // Answer: Slice of Frozen Cheescake
 console.log(imageAlt);
 
 // What is the dimensions and the url of the image? Create an object that looks like this, and log it to the console:
@@ -25,7 +25,7 @@ console.log(imageAlt);
 //  	height: number,
 //  	width: number,
 //	}
-const imageObject = {
+export const imageObject = {
 	url: image.src,			// Answer: url "http://127.0.0.1:5500/assets/frozen-cheesecake-slice.jpg"
 	height: image.height,	// Answer: height: 675
 	width: image.width		// Answer: width: 811
@@ -34,11 +34,11 @@ console.log(imageObject);
 
 // How many ingredients has the paste?
 const ingredients = document.querySelector("ul.ingredients-list-paste");
-const ingredientsLength = ingredients.children.length; // Answer: 5
+export const ingredientsLength = ingredients.children.length; // Answer: 5
 console.log(ingredientsLength);
 
 // Which is the forth element in the list containing the ingredients for the paste?
-const ingredientsForth = ingredients.children[3].innerText; // 3dl vispgrädde
+export const ingredientsForth = ingredients.children[3].innerText; // Answer: 3dl vispgrädde
 console.log(ingredientsForth);
 
 // Create an an array of objects from the instructions. Each element in the array should be an object that looks like this:
@@ -49,7 +49,7 @@ console.log(ingredientsForth);
 const instructions = document.querySelectorAll("ol.instructions-list li"); // get each li item (returns NodeList)
 console.log(instructions); // before
 
-const instructionsArray = [];
+export const instructionsArray = [];
 
 for (let i = 0; i < instructions.length; i++) {
 	const outputObject = {

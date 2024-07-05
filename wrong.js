@@ -60,4 +60,25 @@ missingIngredient.innerText = "400g naturell philadelphiaost";
 ingredientsList.appendChild(missingIngredient);
 
 // The text "Instructions" to the left, beneath the image, has some shadow styling applied to it. Remove that styling.
+const instructionsHeader = document.querySelector(".instructions-container h3");
+instructionsHeader.classList.remove("shadow"); // remove class shadow
+
 // Two list elements of the list of instructions are incorrect. Find them and change them to the correct ones.
+
+// Make object with the text, from and to
+const texts = {
+	"Separera ägggulor och äggvitor. Kasta äggvitorna på din partner och drick upp äggulorna som om du vore Rocky Balboa": "Separera ägggulor och äggvitor. Äggvitorna lägger du i en stor bunke, äggulorna i en liten bunke.",
+	"Gå in till din granne och släng det över deras vardagsrumsgolv!": "Ställ in i frysen över natten."
+}
+
+const instructions = document.querySelectorAll("ol.instructions-list li"); // nodelist of instructions to loop through
+// loop through the instructions nodelist
+for (let i = 0; i < instructions.length; i++) {
+	let currentNodeText = instructions[i].innerText; // get the current text
+	// check if current text exists in the object texts
+	if (currentNodeText in texts) {
+		let newText = texts[currentNodeText]; // extract the corresponding partner text
+		console.log(`"${currentNodeText}" changes to "${newText}"`);
+		instructions[i].innerText = newText; // set the inner text
+	}
+}
